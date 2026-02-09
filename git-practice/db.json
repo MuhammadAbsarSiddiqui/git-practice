@@ -1,6 +1,6 @@
 {
   "employees": [
-    { "id": 1, "name": "Absar", "role": "PM Trainee", "status": "Present" },
+    { "id": 1, "name": "Absar", "role": "PM", "status": "Present" },
     { "id": 2, "name": "John Doe", "role": "Dev", "status": "Absent" }
   ],
   "attendance_logs": []
