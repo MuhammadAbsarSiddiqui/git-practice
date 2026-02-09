@@ -1,7 +1,605 @@
 {
   "employees": [
-    { "id": 1, "name": "Absar", "role": "PM", "status": "Present" },
-    { "id": 2, "name": "John Doe", "role": "Dev", "status": "Absent" }
+    {
+      "id": 1,
+      "name": "John 1",
+      "role": "PM Trainee",
+      "status": "Absent"
+    },
+    {
+      "id": 2,
+      "name": "Alice 2",
+      "role": "SQA",
+      "status": "On Leave"
+    },
+    {
+      "id": 3,
+      "name": "Bob 3",
+      "role": "DevOps",
+      "status": "Present"
+    },
+    {
+      "id": 4,
+      "name": "Charlie 4",
+      "role": "UI/UX Designer",
+      "status": "Absent"
+    },
+    {
+      "id": 5,
+      "name": "Diana 5",
+      "role": "Dev",
+      "status": "On Leave"
+    },
+    {
+      "id": 6,
+      "name": "Edward 6",
+      "role": "PM Trainee",
+      "status": "Present"
+    },
+    {
+      "id": 7,
+      "name": "Fiona 7",
+      "role": "SQA",
+      "status": "Absent"
+    },
+    {
+      "id": 8,
+      "name": "George 8",
+      "role": "DevOps",
+      "status": "On Leave"
+    },
+    {
+      "id": 9,
+      "name": "Hannah 9",
+      "role": "UI/UX Designer",
+      "status": "Present"
+    },
+    {
+      "id": 10,
+      "name": "Absar 10",
+      "role": "Dev",
+      "status": "Absent"
+    },
+    {
+      "id": 11,
+      "name": "John 11",
+      "role": "PM Trainee",
+      "status": "On Leave"
+    },
+    {
+      "id": 12,
+      "name": "Alice 12",
+      "role": "SQA",
+      "status": "Present"
+    },
+    {
+      "id": 13,
+      "name": "Bob 13",
+      "role": "DevOps",
+      "status": "Absent"
+    },
+    {
+      "id": 14,
+      "name": "Charlie 14",
+      "role": "UI/UX Designer",
+      "status": "On Leave"
+    },
+    {
+      "id": 15,
+      "name": "Diana 15",
+      "role": "Dev",
+      "status": "Present"
+    },
+    {
+      "id": 16,
+      "name": "Edward 16",
+      "role": "PM Trainee",
+      "status": "Absent"
+    },
+    {
+      "id": 17,
+      "name": "Fiona 17",
+      "role": "SQA",
+      "status": "On Leave"
+    },
+    {
+      "id": 18,
+      "name": "George 18",
+      "role": "DevOps",
+      "status": "Present"
+    },
+    {
+      "id": 19,
+      "name": "Hannah 19",
+      "role": "UI/UX Designer",
+      "status": "Absent"
+    },
+    {
+      "id": 20,
+      "name": "Absar 20",
+      "role": "Dev",
+      "status": "On Leave"
+    },
+    {
+      "id": 21,
+      "name": "John 21",
+      "role": "PM Trainee",
+      "status": "Present"
+    },
+    {
+      "id": 22,
+      "name": "Alice 22",
+      "role": "SQA",
+      "status": "Absent"
+    },
+    {
+      "id": 23,
+      "name": "Bob 23",
+      "role": "DevOps",
+      "status": "On Leave"
+    },
+    {
+      "id": 24,
+      "name": "Charlie 24",
+      "role": "UI/UX Designer",
+      "status": "Present"
+    },
+    {
+      "id": 25,
+      "name": "Diana 25",
+      "role": "Dev",
+      "status": "Absent"
+    },
+    {
+      "id": 26,
+      "name": "Edward 26",
+      "role": "PM Trainee",
+      "status": "On Leave"
+    },
+    {
+      "id": 27,
+      "name": "Fiona 27",
+      "role": "SQA",
+      "status": "Present"
+    },
+    {
+      "id": 28,
+      "name": "George 28",
+      "role": "DevOps",
+      "status": "Absent"
+    },
+    {
+      "id": 29,
+      "name": "Hannah 29",
+      "role": "UI/UX Designer",
+      "status": "On Leave"
+    },
+    {
+      "id": 30,
+      "name": "Absar 30",
+      "role": "Dev",
+      "status": "Present"
+    },
+    {
+      "id": 31,
+      "name": "John 31",
+      "role": "PM Trainee",
+      "status": "Absent"
+    },
+    {
+      "id": 32,
+      "name": "Alice 32",
+      "role": "SQA",
+      "status": "On Leave"
+    },
+    {
+      "id": 33,
+      "name": "Bob 33",
+      "role": "DevOps",
+      "status": "Present"
+    },
+    {
+      "id": 34,
+      "name": "Charlie 34",
+      "role": "UI/UX Designer",
+      "status": "Absent"
+    },
+    {
+      "id": 35,
+      "name": "Diana 35",
+      "role": "Dev",
+      "status": "On Leave"
+    },
+    {
+      "id": 36,
+      "name": "Edward 36",
+      "role": "PM Trainee",
+      "status": "Present"
+    },
+    {
+      "id": 37,
+      "name": "Fiona 37",
+      "role": "SQA",
+      "status": "Absent"
+    },
+    {
+      "id": 38,
+      "name": "George 38",
+      "role": "DevOps",
+      "status": "On Leave"
+    },
+    {
+      "id": 39,
+      "name": "Hannah 39",
+      "role": "UI/UX Designer",
+      "status": "Present"
+    },
+    {
+      "id": 40,
+      "name": "Absar 40",
+      "role": "Dev",
+      "status": "Absent"
+    },
+    {
+      "id": 41,
+      "name": "John 41",
+      "role": "PM Trainee",
+      "status": "On Leave"
+    },
+    {
+      "id": 42,
+      "name": "Alice 42",
+      "role": "SQA",
+      "status": "Present"
+    },
+    {
+      "id": 43,
+      "name": "Bob 43",
+      "role": "DevOps",
+      "status": "Absent"
+    },
+    {
+      "id": 44,
+      "name": "Charlie 44",
+      "role": "UI/UX Designer",
+      "status": "On Leave"
+    },
+    {
+      "id": 45,
+      "name": "Diana 45",
+      "role": "Dev",
+      "status": "Present"
+    },
+    {
+      "id": 46,
+      "name": "Edward 46",
+      "role": "PM Trainee",
+      "status": "Absent"
+    },
+    {
+      "id": 47,
+      "name": "Fiona 47",
+      "role": "SQA",
+      "status": "On Leave"
+    },
+    {
+      "id": 48,
+      "name": "George 48",
+      "role": "DevOps",
+      "status": "Present"
+    },
+    {
+      "id": 49,
+      "name": "Hannah 49",
+      "role": "UI/UX Designer",
+      "status": "Absent"
+    },
+    {
+      "id": 50,
+      "name": "Absar 50",
+      "role": "Dev",
+      "status": "On Leave"
+    },
+    {
+      "id": 51,
+      "name": "John 51",
+      "role": "PM Trainee",
+      "status": "Present"
+    },
+    {
+      "id": 52,
+      "name": "Alice 52",
+      "role": "SQA",
+      "status": "Absent"
+    },
+    {
+      "id": 53,
+      "name": "Bob 53",
+      "role": "DevOps",
+      "status": "On Leave"
+    },
+    {
+      "id": 54,
+      "name": "Charlie 54",
+      "role": "UI/UX Designer",
+      "status": "Present"
+    },
+    {
+      "id": 55,
+      "name": "Diana 55",
+      "role": "Dev",
+      "status": "Absent"
+    },
+    {
+      "id": 56,
+      "name": "Edward 56",
+      "role": "PM Trainee",
+      "status": "On Leave"
+    },
+    {
+      "id": 57,
+      "name": "Fiona 57",
+      "role": "SQA",
+      "status": "Present"
+    },
+    {
+      "id": 58,
+      "name": "George 58",
+      "role": "DevOps",
+      "status": "Absent"
+    },
+    {
+      "id": 59,
+      "name": "Hannah 59",
+      "role": "UI/UX Designer",
+      "status": "On Leave"
+    },
+    {
+      "id": 60,
+      "name": "Absar 60",
+      "role": "Dev",
+      "status": "Present"
+    },
+    {
+      "id": 61,
+      "name": "John 61",
+      "role": "PM Trainee",
+      "status": "Absent"
+    },
+    {
+      "id": 62,
+      "name": "Alice 62",
+      "role": "SQA",
+      "status": "On Leave"
+    },
+    {
+      "id": 63,
+      "name": "Bob 63",
+      "role": "DevOps",
+      "status": "Present"
+    },
+    {
+      "id": 64,
+      "name": "Charlie 64",
+      "role": "UI/UX Designer",
+      "status": "Absent"
+    },
+    {
+      "id": 65,
+      "name": "Diana 65",
+      "role": "Dev",
+      "status": "On Leave"
+    },
+    {
+      "id": 66,
+      "name": "Edward 66",
+      "role": "PM Trainee",
+      "status": "Present"
+    },
+    {
+      "id": 67,
+      "name": "Fiona 67",
+      "role": "SQA",
+      "status": "Absent"
+    },
+    {
+      "id": 68,
+      "name": "George 68",
+      "role": "DevOps",
+      "status": "On Leave"
+    },
+    {
+      "id": 69,
+      "name": "Hannah 69",
+      "role": "UI/UX Designer",
+      "status": "Present"
+    },
+    {
+      "id": 70,
+      "name": "Absar 70",
+      "role": "Dev",
+      "status": "Absent"
+    },
+    {
+      "id": 71,
+      "name": "John 71",
+      "role": "PM Trainee",
+      "status": "On Leave"
+    },
+    {
+      "id": 72,
+      "name": "Alice 72",
+      "role": "SQA",
+      "status": "Present"
+    },
+    {
+      "id": 73,
+      "name": "Bob 73",
+      "role": "DevOps",
+      "status": "Absent"
+    },
+    {
+      "id": 74,
+      "name": "Charlie 74",
+      "role": "UI/UX Designer",
+      "status": "On Leave"
+    },
+    {
+      "id": 75,
+      "name": "Diana 75",
+      "role": "Dev",
+      "status": "Present"
+    },
+    {
+      "id": 76,
+      "name": "Edward 76",
+      "role": "PM Trainee",
+      "status": "Absent"
+    },
+    {
+      "id": 77,
+      "name": "Fiona 77",
+      "role": "SQA",
+      "status": "On Leave"
+    },
+    {
+      "id": 78,
+      "name": "George 78",
+      "role": "DevOps",
+      "status": "Present"
+    },
+    {
+      "id": 79,
+      "name": "Hannah 79",
+      "role": "UI/UX Designer",
+      "status": "Absent"
+    },
+    {
+      "id": 80,
+      "name": "Absar 80",
+      "role": "Dev",
+      "status": "On Leave"
+    },
+    {
+      "id": 81,
+      "name": "John 81",
+      "role": "PM Trainee",
+      "status": "Present"
+    },
+    {
+      "id": 82,
+      "name": "Alice 82",
+      "role": "SQA",
+      "status": "Absent"
+    },
+    {
+      "id": 83,
+      "name": "Bob 83",
+      "role": "DevOps",
+      "status": "On Leave"
+    },
+    {
+      "id": 84,
+      "name": "Charlie 84",
+      "role": "UI/UX Designer",
+      "status": "Present"
+    },
+    {
+      "id": 85,
+      "name": "Diana 85",
+      "role": "Dev",
+      "status": "Absent"
+    },
+    {
+      "id": 86,
+      "name": "Edward 86",
+      "role": "PM Trainee",
+      "status": "On Leave"
+    },
+    {
+      "id": 87,
+      "name": "Fiona 87",
+      "role": "SQA",
+      "status": "Present"
+    },
+    {
+      "id": 88,
+      "name": "George 88",
+      "role": "DevOps",
+      "status": "Absent"
+    },
+    {
+      "id": 89,
+      "name": "Hannah 89",
+      "role": "UI/UX Designer",
+      "status": "On Leave"
+    },
+    {
+      "id": 90,
+      "name": "Absar 90",
+      "role": "Dev",
+      "status": "Present"
+    },
+    {
+      "id": 91,
+      "name": "John 91",
+      "role": "PM Trainee",
+      "status": "Absent"
+    },
+    {
+      "id": 92,
+      "name": "Alice 92",
+      "role": "SQA",
+      "status": "On Leave"
+    },
+    {
+      "id": 93,
+      "name": "Bob 93",
+      "role": "DevOps",
+      "status": "Present"
+    },
+    {
+      "id": 94,
+      "name": "Charlie 94",
+      "role": "UI/UX Designer",
+      "status": "Absent"
+    },
+    {
+      "id": 95,
+      "name": "Diana 95",
+      "role": "Dev",
+      "status": "On Leave"
+    },
+    {
+      "id": 96,
+      "name": "Edward 96",
+      "role": "PM Trainee",
+      "status": "Present"
+    },
+    {
+      "id": 97,
+      "name": "Fiona 97",
+      "role": "SQA",
+      "status": "Absent"
+    },
+    {
+      "id": 98,
+      "name": "George 98",
+      "role": "DevOps",
+      "status": "On Leave"
+    },
+    {
+      "id": 99,
+      "name": "Hannah 99",
+      "role": "UI/UX Designer",
+      "status": "Present"
+    },
+    {
+      "id": 100,
+      "name": "Absar 100",
+      "role": "Dev",
+      "status": "Absent"
+    }
   ],
   "attendance_logs": []
 }
