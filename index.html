@@ -6,177 +6,267 @@
 <body>
 
     <button id="myBtn">Click me</button>
-    <!-- <button id="myBtn2">Updated</button>
+    <button id="myBtn2">Updated</button>
     <button id="myBtn3">Reset All</button>
     <button id="myBtn4">Count: 0</button>
-    <button id="myBtn5">Reset Count</button> -->
+    <button id="myBtn5">Reset Count</button>
 
     <script>
-        // Step 1: grab the button
-//         const button = document.getElementById('myBtn');
-//         const button2 = document.getElementById('myBtn2');
-//         const button3 = document.getElementById('myBtn3');
-//          const button4 = document.getElementById('myBtn4');
-//          const button5 = document.getElementById('myBtn5');
-//          let count = 0;
-         // Step 2: add click listener
-//         button.addEventListener('click', function() {
-           
+        // =========================================================================
+        // SECTION 1: DOM Manipulation & Event Listeners
+        // =========================================================================
+        // DOM (Document Object Model) allows JavaScript to interact with HTML elements.
+        // We use document.getElementById() to select HTML buttons by their unique IDs.
+        
+        const button = document.getElementById('myBtn');
+        const button2 = document.getElementById('myBtn2');
+        const button3 = document.getElementById('myBtn3');
+        const button4 = document.getElementById('myBtn4');
+        const button5 = document.getElementById('myBtn5');
+        
+        // This variable tracks the click count for the counter buttons (button4 and button5).
+        let count = 0;
 
-            // change the button text
-//             button.textContent = 'Clicked!';
-//              alert('Hello!');
-            // also change background color
-//             button.style.backgroundColor = 'lightblue';
-//         });
+        // addEventListener('click', callback) registers a function to be executed 
+        // whenever the specified element is clicked.
+        
+        // Button 1: Changes its text, background color, and triggers an alert popup.
+        button.addEventListener('click', function() {
+            button.textContent = 'Clicked!';
+            alert('Hello!');
+            button.style.backgroundColor = 'lightblue';
+        });
 
-//         button2.addEventListener('click', function() {
-//             // change the button text
-//             button2.textContent = 'wow';
-//             // also change background color
-//             button2.style.backgroundColor = 'lightgreen';
-//         });
+        // Button 2: Changes its text and background color on click.
+        button2.addEventListener('click', function() {
+            button2.textContent = 'wow';
+            button2.style.backgroundColor = 'lightgreen';
+        });
 
-//         button3.addEventListener('click', function() {
-//             // change the button text
-//             button2.textContent = 'Updated';
-//              alert('button 3 clicked');
-//              button.textContent = 'Click me';
-//              button.style.backgroundColor = '';
-//              button2.style.backgroundColor = '';
-//             // also change background color
-//             button3.style.backgroundColor = 'lightcoral';
-//             button4.textContent = 'Count: 0';
-//         });
-//         button4.addEventListener('click', function() {
-//             count++;
-//             button4.textContent = 'Count: ' + count;
-//         });
-//         button5.addEventListener('click', function() {
-//             if (count > 0){
-//                 count-- ;
-            
-//             button4.textContent = 'Count: ' + count;
-// }        });
+        // Button 3: Resets Button 1, Button 2, and Button 4 back to their default states.
+        button3.addEventListener('click', function() {
+            button2.textContent = 'Updated';
+            alert('button 3 clicked');
+            button.textContent = 'Click me';
+            button.style.backgroundColor = '';
+            button2.style.backgroundColor = '';
+            button3.style.backgroundColor = 'lightcoral';
+            button4.textContent = 'Count: 0';
+            count = 0; // Reset the count variable as well
+        });
 
-// arrays basics
-// let colors = ["red", "green", "blue", "yellow", "purple"];
-// console.log(colors[3]);
-// console.log(colors[0]);
-// console.log(colors[2]);
-// console.log(colors[1]);
-// console.log(colors.length);
+        // Button 4: Increments the click count and updates the button label text.
+        button4.addEventListener('click', function() {
+            count++;
+            button4.textContent = 'Count: ' + count;
+        });
 
-// // loops
-// for (let i = 0; i < 4; i++) {
-//     console.log("javaScript is fun!");
-//     console.log("i is: " + i);
-// }
-// for (let i = 0; i < 9; i++) {
-//     console.log("Step: " + (i + 1));
-// }
-// for (let x = 1; x<= 10; x++) {
-//     let ans = 3 * x;
-//     console.log("3 X " + x + "=" + ans);
-    
-// }
+        // Button 5: Decrements the click count (if greater than 0) and updates the button label text.
+        button5.addEventListener('click', function() {
+            if (count > 0) {
+                count--;
+                button4.textContent = 'Count: ' + count;
+            }
+        });
 
-// loops and arrays
-// let colors = ["red", "green", "blue", "yellow", "purple"];
+        // =========================================================================
+        // SECTION 2: Array Basics
+        // =========================================================================
+        // Arrays are ordered lists of values. They are zero-indexed, meaning the 
+        // first element starts at index 0. We access elements using square brackets.
+        
+        let colors = ["red", "green", "blue", "yellow", "purple"];
+        
+        console.log("--- Array Basics ---");
+        console.log("Index 3 element (yellow): " + colors[3]);
+        console.log("Index 0 element (red): " + colors[0]);
+        console.log("Index 2 element (blue): " + colors[2]);
+        console.log("Index 1 element (green): " + colors[1]);
+        console.log("Total length of colors array: " + colors.length); // .length returns the number of items
 
-// for (let i = 0; i < colors.length; i++) {
-//     console.log("my favorite color is " + colors[i]);
-// }
+        // =========================================================================
+        // SECTION 3: Loops
+        // =========================================================================
+        // Loops are used to run a block of code multiple times.
+        // The standard 'for' loop has three parts: initialization, condition, and increment/decrement.
+        
+        console.log("--- Loops ---");
+        // Loop 1: Runs 4 times (i = 0, 1, 2, 3)
+        for (let i = 0; i < 4; i++) {
+            console.log("javaScript is fun!");
+            console.log("i is: " + i);
+        }
+        
+        // Loop 2: Runs 9 times (i = 0 to 8) to print steps 1 to 9
+        for (let i = 0; i < 9; i++) {
+            console.log("Step: " + (i + 1));
+        }
+        
+        // Loop 3: Multiplication table of 3, running from 1 to 10
+        for (let x = 1; x <= 10; x++) {
+            let ans = 3 * x;
+            console.log("3 X " + x + " = " + ans);
+        }
 
-// for (let i = 0; i < colors.length; i++) {
-//     console.log(i + ": " + colors[i]);
-// }
-// // ARRAY METHODS(PUSH, POP, MAP, FILTER)
-// colors.push("orange");
-// console.log(colors);
-// let lastColor = colors.pop();
-// console.log(lastColor);
-// console.log(colors);
-// let newColors = colors.map(function(color) {
-//     return color + "ish";
-// });
-// console.log(newColors); 
-// let capColors = colors.map(function(color) {
-//     return color.toUpperCase();
-// });
-// console.log(capColors); 
+        // =========================================================================
+        // SECTION 4: Loops and Arrays
+        // =========================================================================
+        // We can combine loops with arrays to iterate (loop) over every element in the array.
+        // We use the array's length property to ensure we don't exceed the array bounds.
+        // (Note: We reuse the 'colors' array variable declared in Section 2 instead of redeclaring it)
+        
+        console.log("--- Loops and Arrays ---");
+        // Loop through colors array to output favorite color messages
+        for (let i = 0; i < colors.length; i++) {
+            console.log("my favorite color is " + colors[i]);
+        }
 
-// let prices = [10, 20, 30, 40, 60, 70, 80];
-// let pricesWithTax = prices.map(function(price) {
-//     return price * 1.1;
-// });
-// console.log(pricesWithTax); 
+        // Loop through colors array printing both index and element
+        for (let i = 0; i < colors.length; i++) {
+            console.log(i + ": " + colors[i]);
+        }
 
-// let nums = [1, 2, 3];
-// let adednum = nums.map(function(num) {
-//     return num * 2;
-// });
-// console.log(adednum);
+        // =========================================================================
+        // SECTION 5: Array Methods (push, pop, map, filter)
+        // =========================================================================
+        // Array methods let us manipulate elements and create new arrays easily.
+        
+        console.log("--- Array Methods ---");
+        
+        // push() adds a new element to the end of the array.
+        colors.push("orange");
+        console.log("Colors after push('orange'):", colors);
+        
+        // pop() removes and returns the last element of the array.
+        let lastColor = colors.pop();
+        console.log("Removed color via pop(): " + lastColor);
+        console.log("Colors after pop():", colors);
+        
+        // map() creates a new array by applying a function to every element of the original array.
+        // Example 1: Add "ish" suffix to each color
+        let newColors = colors.map(function(color) {
+            return color + "ish";
+        });
+        console.log("newColors (map with 'ish'):", newColors); 
+        
+        // Example 2: Convert colors to UPPERCASE
+        let capColors = colors.map(function(color) {
+            return color.toUpperCase();
+        });
+        console.log("capColors (map toUpperCase):", capColors); 
+        
+        // Example 3: Apply 10% tax multiplier to a list of prices
+        let prices = [10, 20, 30, 40, 60, 70, 80];
+        let pricesWithTax = prices.map(function(price) {
+            return price * 1.1;
+        });
+        console.log("pricesWithTax (map * 1.1):", pricesWithTax); 
+        
+        // Example 4: Double every number in a small array
+        let nums = [1, 2, 3];
+        let doubledNums = nums.map(function(num) {
+            return num * 2;
+        });
+        console.log("doubledNums (map * 2):", doubledNums);
+        
+        // filter() creates a new array with elements that pass a test condition.
+        // Example: Only include prices that are 40 or greater
+        let highPrices = prices.filter(function(price) {
+            return price >= 40;
+        });
+        console.log("highPrices (filter >= 40):", highPrices); 
 
-// let highPrices = prices.filter(function(price) {
-//     return price >= 40;
-// });
-// console.log(highPrices); 
+        // =========================================================================
+        // SECTION 6: Operators, Coercion, and Comparison
+        // =========================================================================
+        // JavaScript performs automatic type conversion (coercion) when operators are 
+        // applied to mismatching data types.
+        
+        console.log("--- Operators & Coercion ---");
+        
+        // true is coerced to 1, so true + 1 becomes 1 + 1 = 2
+        let z = true + 1;
+        console.log("true + 1 =", z);   
+        
+        // false is coerced to 0, so false * 4 becomes 0 * 4 = 0
+        let xVal = false * 4;
+        console.log("false * 4 =", xVal);
+        
+        // === is the strict equality operator. It checks both value and type.
+        // 5 (number) is NOT strictly equal to "5" (string), so it returns false.
+        console.log("5 === '5' is:", (5 === "5"));
+        
+        // Logical AND (&&) returns true only if both expressions are true.
+        console.log("(9 > 8) && (9 > 5) is:", ((9 > 8) && (9 > 5)));
+        
+        // Decrement operator (--) decreases a numeric value by 1.
+        let o = 7; 
+        o--;
+        console.log("o after o-- is:", o);
 
-// let z = true + 1;
-// console.log(z);   
-// let x = false * 4;
-// console.log(x);
-// console.log(5 === "5");
+        // =========================================================================
+        // SECTION 7: Conditional Statements (if / else if / else)
+        // =========================================================================
+        // Conditional structures let the program make decisions based on dynamic values.
+        
+        console.log("--- Conditionals ---");
+        let n = 0;
+        if (n > 0) {
+            console.log("n is positive");
+        } else if (n < 0) {
+            console.log("n is negative");
+        } else {
+            console.log("n is zero");
+        }
+        
+        // Truthy vs Falsy values. An empty string "" is a falsy value.
+        // We use a different variable name ('countCheck') to avoid redeclaration syntax error.
+        let countCheck = "";
+        if (countCheck) {
+            console.log("countCheck is truthy (not empty)");
+        } else {
+            console.log("countCheck is falsy (empty string)");
+        }
 
-// console.log((9 > 8) && (9 > 5));
-// let o = 7; 
-// o--;
-//  console.log(o);
+        // =========================================================================
+        // SECTION 8: For...of Loop
+        // =========================================================================
+        // The 'for...of' loop is a modern, clean way to iterate over iterable objects 
+        // like arrays without needing to keep track of indexes.
+        
+        console.log("--- For...of Loop ---");
+        let fruits = ["apple", "banana", "mango", "orange", "grape", "strawberry", "watermelon"];
+        for (let fruit of fruits) {
+            console.log(fruit);
+        }
 
-let n = 0;
-
-if (n > 0) {
-    console.log("positive");    }
-    else if (n < 0) {
-        console.log("negative");
-    }
-    
-    else {
-        console.log("zero");
-    }
-
-    let count = "";
-if (count) {
-    console.log("Count is not zero");
-}
-else {
-    console.log("Count is zero");
-}
-
-let fruits = ["apple", "banana", "mango", "orange", "grape", "strawberry", "watermelon"];
-for (let fruit of fruits) {
-    console.log(fruit);
-}
-
-const square = (x) => {
-    return x * x;
-};  
-console.log(square(5));
-
-
-// function declaration
-const iseven = (num) => {
-    return num % 2 === 0;           
-}
-console.log(iseven(4));
-console.log(iseven(3));
-function test() {
-    let x = 10;
-}
-
-
-
+        // =========================================================================
+        // SECTION 9: Functions (Declaration and Arrow Functions)
+        // =========================================================================
+        // Functions are reusable blocks of code.
+        
+        console.log("--- Functions ---");
+        
+        // Arrow Function syntax: const funcName = (params) => { body }
+        // Example 1: Calculating the square of a number
+        const square = (x) => {
+            return x * x;
+        };  
+        console.log("square(5):", square(5));
+        
+        // Example 2: Checking if a number is even
+        const iseven = (num) => {
+            return num % 2 === 0;           
+        };
+        console.log("iseven(4):", iseven(4));
+        console.log("iseven(3):", iseven(3));
+        
+        // Standard function declaration
+        function test() {
+            let localX = 10; // local variable inside function scope
+            console.log("test function execution. localX is:", localX);
+        }
+        test();
     </script>
 </body>
 </html>
