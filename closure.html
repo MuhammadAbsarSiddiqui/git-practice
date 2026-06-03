@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phase 0 Complete Demo</title>
+    <style>
+        button { font-size: 18px; padding: 10px; margin: 5px; }
+    </style>
+</head>
+<body>
+
+    <h1>CLOSURE</h1>
+
+    <script>
+  function outer() {
+    let message = "Hello from outer";
+    
+    function inner() {
+        console.log(message); // inner can access outer's variable
+    }
+    
+    inner();
+}
+
+outer(); // Output: Hello from outer
+
+
+
+function makeGreeting(name) {
+    let greeting = "Hello, " + name;
+    
+    function sayHello() {
+        console.log(greeting);
+    }
+    
+    return sayHello; // return the inner function
+}
+
+let greetAlice = makeGreeting("Alice");
+greetAlice(); // Output: Hello, Alice
+
+
+function createCounter() {
+    let count = 0; // private variable
+    
+    return function() {
+        count++;
+        return count;
+    };
+}
+
+let counter = createCounter();
+console.log(counter()); // 1
+console.log(counter()); // 2
+console.log(counter()); // 3
+
+// No way to directly access 'count' – it's private
+    console.log("counter with button");
+    
+    function createCounterWithButtons() {
+    let count = 0;
+    
+    return {
+        increment: function() { count++; return count; },
+        decrement: function() { count--; return count; },
+        getCount: function() { return count; }
+    };
+}
+
+let myCounter = createCounterWithButtons();
+console.log(myCounter.increment()); // 1
+console.log(myCounter.increment()); // 2
+console.log(myCounter.decrement()); // 1
+console.log(myCounter.decrement()); // 1
+console.log(myCounter.decrement()); // 1
+console.log(myCounter.decrement()); // 1
+console.log(myCounter.decrement()); // 1
+console.log(myCounter.decrement()); // 1
+console.log(myCounter.increment()); // 1
+console.log(myCounter.getCount());  // 1
+    </script>
+
+</body>
+</html>

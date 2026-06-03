@@ -9,8 +9,12 @@
     <button id="myBtn2">Updated</button>
     <button id="myBtn3">Reset All</button>
     <button id="myBtn4">Count: 0</button>
-    <button id="myBtn5">Reset Count</button>
-
+    <button id="myBtn5">Backward Count</button>
+    <div style="display: flex; justify-content: space-between; width: 200px;">
+    <a href="phase0.html">Phase 0 Demo</a>
+    <a href="closure.html">Closure Demo</a>
+    <a href="phase4.html">Phase 4 Demo</a>
+</div>
     <script>
         // =========================================================================
         // SECTION 1: DOM Manipulation & Event Listeners
@@ -41,6 +45,7 @@
         button2.addEventListener('click', function() {
             button2.textContent = 'wow';
             button2.style.backgroundColor = 'lightgreen';
+            button2.style.color = 'white';
         });
 
         // Button 3: Resets Button 1, Button 2, and Button 4 back to their default states.
@@ -267,6 +272,75 @@
             console.log("test function execution. localX is:", localX);
         }
         test();
+        // Definition with parameters 'name' and 'greeting'
+        function greet(name, greeting) {
+            console.log(greeting + ", " + name + "!");
+        }
+
+        // Call with arguments "Alice" and "Hello"
+        greet("Alice", "Hello"); // Output: Hello, Alice!
+
+        // You can reuse with different arguments
+        greet("Bob", "Hi");      // Output: Hi, Bob!
+
+        // break – stop when i reaches 3
+        for (let i = 1; i <= 5; i++) {
+            if (i === 3) {
+                break;
+            }
+            console.log(i);
+        }
+        // Output: 1, 2
+
+        // continue – skip even numbers
+        for (let i = 1; i <= 5; i++) {
+            if (i % 2 === 0) {
+                continue;
+            }
+            console.log(i);
+        }
+        // Output: 1, 3, 5
+
+        console.log("Start");
+
+        setTimeout(function() {
+            console.log("Inside callback (after 2 seconds)");
+        }, 2000);
+
+        console.log("End");
+
+
+        function fetchData(callback) {
+            let data = { name: "Alice", age: 30 };
+            // Simulate async delay
+            setTimeout(() => {
+                callback(data); // pass data to callback
+            }, 5000);
+        }
+
+        fetchData(function(result) {
+            console.log("Received:", result.name, result.age);
+        });
+
+
+        const greetUser  = (name, callback) => {
+            let message = "Hello, " + name;
+            callback(message);
+        }
+
+        greetUser("Ali", function(msg) {
+            console.log(msg);
+        });
+
+
+        // Create an object representing a person
+let person = {
+    name: "Alice",
+    age: 30,
+    isStudent: false
+};
+
+console.log(person);
     </script>
 </body>
 </html>
