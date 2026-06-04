@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Phase 6: Browser API & Advanced DOM</h1>
+    <div id="app">
+    <p class="text9">First paragraph</p>
+    <p class="text">Second paragraph</p>
+    <p class="text highlight">Third paragraph</p>
+</div>
+<button id="btn">Click me</button>
+<style>
+    .active { background-color: yellow; font-weight: bold; }
+</style>
+<script>
+    const firstPara = document.querySelector('.text');
+    console.log(firstPara.textContent); // "First paragraph"
+
+ const para1 = document.querySelector('.text');
+    console.log(para1.textContent); // "First paragraph"
+
+    const allParas = document.querySelectorAll('.text');
+    console.log(allParas.length);       // 3
+    allParas.forEach(p => console.log(p.textContent));
+
+
+
+      const btn = document.getElementById('btn');
+    btn.addEventListener('click', () => {
+        btn.classList.toggle('active');  // toggles highlight
+    });
+</script>
+</body>
+</html>

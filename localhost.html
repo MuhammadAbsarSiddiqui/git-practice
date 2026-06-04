@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phase 6 Practice – To‑Do List</title>
+    <style>
+        /* Simple styling – not the focus, but helps visibility */
+        body { font-family: Arial; max-width: 500px; margin: 2rem auto; }
+        .todo-item { display: flex; gap: 0.5rem; margin: 0.5rem 0; align-items: center; }
+        .todo-text { flex: 1; }
+        .completed { text-decoration: line-through; opacity: 0.6; }
+        button { cursor: pointer; }
+        input { padding: 0.25rem; }
+    </style>
+</head>
+<body>
+
+    <h1>📝 To‑Do List (Phase 6 Practice)</h1>
+
+    <!-- Form to add new tasks -->
+    <form id="todoForm">
+        <input type="text" id="taskInput" placeholder="Write a task..." required>
+        <button type="submit">Add Task</button>
+    </form>
+
+    <!-- Container where tasks will be displayed -->
+    <div id="todoContainer"></div>
+
+    <!-- Button to clear all completed tasks -->
+    <button id="clearCompletedBtn">Clear Completed</button>
+
+    <script>
+        // =====================================================================
+        // 1. GET REFERENCES TO DOM ELEMENTS
+        // =====================================================================
+        const todoForm = document.getElementById('todoForm');
+        const taskInput = document.getElementById('taskInput');
+        const todoContainer = document.getElementById('todoContainer');
+        const clearCompletedBtn = document.getElementById('clearCompletedBtn');
+
+        // =====================================================================
+        // 2. LOAD SAVED TASKS FROM localStorage (if any)
+        // =====================================================================
+        // We store tasks as an array of objects: { text: string, completed: boolean }
+        let tasks = [];
+
+        // Load from localStorage: getItem returns a string or null. If null, use empty array.
+        const saved = localStorage.getItem('todoTasks');
+        if (saved) {
+            tasks = JSON.parse(saved);  // convert JSON string back to array
+        }
+
+        // =====================================================================
+        // 3. HELPER FUNCTIONS
+        // =====================================================================
+
+        // Save current tasks array to localStorage
+        function saveTasks() {
+            localStorage.setItem('todoTasks', JSON.stringify(tasks));
+        }
+
+        // Render all tasks from the tasks array into the todoContainer
+        function renderTasks() {
+            // Clear the container before re‑rendering (to avoid duplicates)
+            todoContainer.innerHTML = '';
+
+            // Loop through each task using forEach
+            tasks.forEach((task, index) => {
+                // Create a new div for this task
+                const taskDiv = document.createElement('div');
+                taskDiv.className = 'todo-item';
+                // Store the task index in a data attribute for easy reference (optional)
+                taskDiv.dataset.index = index;
+
+                // Create a span to hold the task text
+                const textSpan = document.createElement('span');
+                textSpan.className = 'todo-text';
+                textSpan.textContent = task.text;
+                if (task.completed) {
+                    textSpan.classList.add('completed'); // add strikethrough if completed
+                }
+
+                // Create a checkbox to mark as completed
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.checked = task.completed; // set checked state from task
+                // When checkbox changes, update the task's completed status and re-render
+                checkbox.addEventListener('change', (e) => {
+                    tasks[index].completed = checkbox.checked; // update array
+                    saveTasks();          // persist to localStorage
+                    renderTasks();        // re-render to show updated style
+                });
+
+                // Create a delete button
+                const deleteBtn = document.createElement('button');
+                deleteBtn.textContent = 'Delete';
+                deleteBtn.classList.add('delete-btn'); // class for event delegation
+
+                // Build the taskDiv by appending children
+                taskDiv.appendChild(checkbox);
+                taskDiv.appendChild(textSpan);
+                taskDiv.appendChild(deleteBtn);
+                todoContainer.appendChild(taskDiv);
+            });
+        }
+
+        // =====================================================================
+        // 4. EVENT HANDLERS
+        // =====================================================================
+
+        // Handle form submission (add new task)
+        todoForm.addEventListener('submit', (event) => {
+            event.preventDefault();  // stop page reload
+            const newText = taskInput.value.trim();
+            if (newText === '') return; // ignore empty input
+
+            // Add new task object to tasks array (completed: false)
+            tasks.push({ text: newText, completed: false });
+            saveTasks();          // save to localStorage
+            renderTasks();        // update the displayed list
+            taskInput.value = ''; // clear input field
+        });
+
+        // Use EVENT DELEGATION on todoContainer to handle delete button clicks
+        // Because delete buttons are created dynamically, we listen on the parent container.
+        todoContainer.addEventListener('click', (event) => {
+            // Check if the clicked element has class 'delete-btn' (or is inside a delete button)
+            const deleteButton = event.target.closest('.delete-btn');
+            if (deleteButton) {
+                // Find the parent .todo-item div that contains this delete button
+                const taskDiv = deleteButton.closest('.todo-item');
+                if (taskDiv) {
+                    // Get the index from the dataset (we stored it during render)
+                    const index = parseInt(taskDiv.dataset.index);
+                    if (!isNaN(index)) {
+                        tasks.splice(index, 1); // remove task from array
+                        saveTasks();
+                        renderTasks();
+                    }
+                }
+            }
+        });
+
+        // Clear all completed tasks
+        clearCompletedBtn.addEventListener('click', () => {
+            // Keep only tasks where completed is false
+            tasks = tasks.filter(task => !task.completed);
+            saveTasks();
+            renderTasks();
+        });
+
+        // =====================================================================
+        // 5. INITIAL RENDER ON PAGE LOAD
+        // =====================================================================
+        renderTasks();
+    </script>
+</body>
+</html>

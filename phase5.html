@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//         function fetchData() {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             const data = { name: "Alice", age: 30 };
+//             resolve(data);
+//             // reject("Failed to load");
+//         }, 9000);
+//     });
+// }
+
+// fetchData()
+//     .then(data => console.log("Received:", data))
+//     .catch(err => console.log("Error:", err));
+
+
+
+
+//     // 
+
+//     const mightFail = new Promise((resolve, reject) => {
+//     let random = Math.random();
+//     if (random > 0.5) {
+//         resolve("Success!");
+//     } else {
+//         reject("Failure!");
+//     }
+// });
+
+// mightFail
+//     .then(successMsg => console.log(successMsg))
+//     .catch(errorMsg => console.log(errorMsg));
+
+
+// // 
+
+//     function getMessage() {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve("Hello after 8 seconds");
+//         }, 8000);
+//     });
+// }
+
+// getMessage().then(msg => console.log(msg));
+
+// // 
+
+// getMessage()
+//     .then(msg => {
+//         console.log("First:", msg);
+//         return msg.toUpperCase();
+//     })
+//     .then(upperMsg => {
+//         console.log("Second:", upperMsg);
+//     });
+
+// //    async await
+
+// function waitfourSecond() {
+//     return new Promise((resolve) => {
+//         setTimeout(() => resolve("Done!"), 4000);
+//     });
+// }
+
+// async function run() {
+//     console.log("Start");
+//     const result = await waitfourSecond();
+//     console.log(result);
+//     console.log("End");
+// }
+
+// run();
+
+
+
+
+// A simple promise that takes 2 seconds
+function fetchUser() {
+  return new Promise(resolve => {
+    setTimeout(() => resolve("Alice"), 2000);
+  });
+}
+
+// Notice the 'async' keyword!
+async function displayUser() {
+  console.log("Fetching user...");
+  
+  // The code PAUSES here until fetchUser() is done
+  const name = await fetchUser(); 
+  
+  console.log("Welcome, " + name);
+}
+
+displayUser();
+    </script>
+</body>
+</html>

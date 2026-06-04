@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Advance JavaScript</h1>
+    <script>
+//         function divide(a, b) {
+//     try {
+//         if (b === 0) {
+//             throw new Error("Division by zero is not allowed");
+//         }
+//         const result = a / b;
+//         console.log("Result:", result);
+//     } catch (error) {
+//         console.error("Caught an error:", error.message);
+//     } finally {
+//         console.log("This runs whether there was an error or not");
+//     }
+// }
+
+
+
+// divide(10, 2); // Result: 5, then finally
+// divide(10, 0); // Caught an error: Division by zero, then finally
+
+// // ========== ASYNCHRONOUS CALLBACK ==========
+// console.log("Before setTimeout");
+// // setTimeout is a higher‑order function. It takes a callback (arrow function) and a delay.
+// setTimeout(() => {
+//     console.log("This is the callback, executed after 1 second");
+// }, 1000);
+// console.log("After setTimeout"); // runs immediately, not waiting
+
+// // ========== SYNCHRONOUS CALLBACK ==========
+// // forEach accepts a callback and calls it immediately for each element.
+// const nums = [1, 2, 3];
+// nums.forEach((num) => {
+//     console.log(num * 2); // this callback runs right away
+// });
+
+
+
+// ========== IMPURE FUNCTION (side effect: logs to console) ==========
+// function logAndAdd(a, b) {
+//     console.log("Adding", a, b); // console.log is a side effect
+//     return a + b;
+// }
+// logAndAdd(2, 3);
+
+
+
+
+// // ========== WITH PROMISE (asynchronous, does not block) ==========
+// console.log("Order coffee");
+// let coffeePromise = new Promise((resolve) => {
+//     setTimeout(() => {
+//         console.log("Coffee ready");
+//         resolve();
+//     }, 3000);
+// });
+// console.log("Order another coffee"); // runs immediately
+// // Output: "Order coffee", then "Order another coffee", then after 3 sec "Coffee ready"
+// Synchronous
+console.log("Start");
+// long loop (blocks)
+for (let i = 0; i < 1e9; i++) {}
+console.log("End"); // waits for loop
+
+// Asynchronous
+console.log("Start");
+setTimeout(() => console.log("Inside"), 1000);
+console.log("End"); // runs immediately
+    </script>
+</body>
+</html> 
