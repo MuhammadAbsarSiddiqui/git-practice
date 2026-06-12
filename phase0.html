@@ -100,21 +100,28 @@
 // setTimeout(() => console.log("Inside timeout"), 2000);
 // console.log("End"); // prints immediately, then after 2 seconds "Inside timeout"
 
-function fetchUserCallback(userId, callback) {
-    setTimeout(() => {
-        console.log("1 second has been passed");
-        
-        // Simulate server response after 1 second
-        const user = { id: userId, name: "Alice" };
-        callback(user); // Call the callback with the user data
-    }, 3000);
-}
 
-// Usage
-fetchUserCallback(1, (user) => {
-    console.log("Callback: User received", user.name);
+// Microtask that schedules another microtask
+Promise.resolve().then(() => {
+    console.log("First microtask");
+    // This new Promise callback is added to the microtask queue while we are processing microtasks.
+    // The Event Loop will run it in the SAME batch before moving to macrotasks.
+    Promise.resolve().then(() => console.log("Second microtask"));
 });
-// Output after 1 second: Callback: User received Alice
+
+// Macrotask
+setTimeout(() => console.log("Macrotask"), 0);
+
+// Synchronous
+console.log("Sync");
+
+// ========== EXECUTION ORDER ==========
+// Sync prints.
+// Microtask queue starts: First microtask prints, then it adds Second microtask.
+// Event loop continues processing microtasks – Second microtask prints.
+// Only after microtask queue is empty, it takes the macrotask.
+// Output: Sync, First microtask, Second microtask, Macrotask
+
     </script>
 
 </body>
