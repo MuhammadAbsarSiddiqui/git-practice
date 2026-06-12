@@ -12,82 +12,109 @@
     <button id="resetBtn">Reset</button>
 
     <script>
-        // Grab both buttons
-        const actionBtn = document.getElementById('actionBtn');
-        const resetBtn = document.getElementById('resetBtn');
+//         // Grab both buttons
+//         const actionBtn = document.getElementById('actionBtn');
+//         const resetBtn = document.getElementById('resetBtn');
 
-        let clickCount = 0;
+//         let clickCount = 0;
 
-        // Action button: change text, background, show alert, increase counter
-        actionBtn.addEventListener('click', function() {
-            clickCount++;
-            actionBtn.textContent = 'Clicked ' + clickCount + ' times';
-            actionBtn.style.backgroundColor = 'lightgreen';
-            alert('Button clicked! Total: ' + clickCount);
-        });
+//         // Action button: change text, background, show alert, increase counter
+//         actionBtn.addEventListener('click', function() {
+//             clickCount++;
+//             actionBtn.textContent = 'Clicked ' + clickCount + ' times';
+//             actionBtn.style.backgroundColor = 'lightgreen';
+//             alert('Button clicked! Total: ' + clickCount);
+//         });
 
-        // Reset button: reset text, background, and counter
-        resetBtn.addEventListener('click', function() {
-            clickCount = 0;
-            actionBtn.textContent = 'Click me';
-            actionBtn.style.backgroundColor = '';
-            alert('Counter reset');
-        });
+//         // Reset button: reset text, background, and counter
+//         resetBtn.addEventListener('click', function() {
+//             clickCount = 0;
+//             actionBtn.textContent = 'Click me';
+//             actionBtn.style.backgroundColor = '';
+//             alert('Counter reset');
+//         });
 
-        // Hoisted – works
+//         // Hoisted – works
 
-        console.log("phase 2 hoisting");
+//         console.log("phase 2 hoisting");
         
-sayHi();
-function sayHi() {
-    console.log("Hi from hoisted function");
+// sayHi();
+// function sayHi() {
+//     console.log("Hi from hoisted function");
+// }
+
+// // Not hoisted – error
+// // sayHello(); // TypeError: sayHello is not a function
+// const sayHello = function() {
+//     console.log("Hello");
+// };
+
+// // Synchronous callback – using forEach
+// let numbers = [1, 2, 3];
+// numbers.forEach(function(num) {
+//     console.log(num * 2);
+// });
+// // Output: 2, 4, 6
+
+// // Asynchronous callback – using setTimeout
+// setTimeout(function() {
+//     console.log("Runs after 1 second");
+// }, 1000);
+
+// // Custom higher-order function that accepts a callback
+// function doTask(taskName, callback) {
+//     console.log("Starting task: " + taskName);
+//     callback(); // call the callback
+//     console.log("Task finished");
+// }
+
+// doTask("Clean room", function() {
+//     console.log("Cleaning...");
+// });
+
+
+// console.log("phase 3 callback functions");
+
+
+
+// function doTask(taskName, callback) {
+//     console.log("Starting: " + taskName);
+//     // Call the callback
+//     callback();
+//     console.log("Finished: " + taskName);
+// }
+
+// // Passing a callback
+// doTask("Write code", function() {
+//     console.log("Writing JavaScript...");
+// });
+
+
+// // Synchronous: blocks
+// console.log("Start");
+// for (let i = 0; i < 1000000000; i++) {} // long loop – freezes for a moment
+// console.log("End"); // waits for loop
+
+// // Asynchronous: does not block
+// console.log("Start");
+// setTimeout(() => console.log("Inside timeout"), 2000);
+// console.log("End"); // prints immediately, then after 2 seconds "Inside timeout"
+
+function fetchUserCallback(userId, callback) {
+    setTimeout(() => {
+        console.log("1 second has been passed");
+        
+        // Simulate server response after 1 second
+        const user = { id: userId, name: "Alice" };
+        callback(user); // Call the callback with the user data
+    }, 3000);
 }
 
-// Not hoisted – error
-// sayHello(); // TypeError: sayHello is not a function
-const sayHello = function() {
-    console.log("Hello");
-};
-
-// Synchronous callback – using forEach
-let numbers = [1, 2, 3];
-numbers.forEach(function(num) {
-    console.log(num * 2);
+// Usage
+fetchUserCallback(1, (user) => {
+    console.log("Callback: User received", user.name);
 });
-// Output: 2, 4, 6
-
-// Asynchronous callback – using setTimeout
-setTimeout(function() {
-    console.log("Runs after 1 second");
-}, 1000);
-
-// Custom higher-order function that accepts a callback
-function doTask(taskName, callback) {
-    console.log("Starting task: " + taskName);
-    callback(); // call the callback
-    console.log("Task finished");
-}
-
-doTask("Clean room", function() {
-    console.log("Cleaning...");
-});
-
-
-console.log("phase 3 callback functions");
-
-
-
-function doTask(taskName, callback) {
-    console.log("Starting: " + taskName);
-    // Call the callback
-    callback();
-    console.log("Finished: " + taskName);
-}
-
-// Passing a callback
-doTask("Write code", function() {
-    console.log("Writing JavaScript...");
-});
+// Output after 1 second: Callback: User received Alice
     </script>
 
 </body>
