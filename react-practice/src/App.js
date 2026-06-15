@@ -1,5 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+import Counter from './couter';
+import NameForm from './nameform';
+import Toggle from './toggle';
 
 function App() {
   return (
@@ -9,6 +12,8 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <Counter />
+        <NameForm />
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -17,6 +22,7 @@ function App() {
         >
           Learn React
         </a>
+        <Toggle />
       </header>
     </div>
   );
